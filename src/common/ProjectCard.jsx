@@ -1,28 +1,21 @@
 
-// ProjectCard
 import PropTypes from 'prop-types';
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import styles from './ProjectCard.module.css';
 
 const ProjectCard = ({ src, h3, tools, projectId }) => {
-  const navigate = useNavigate();
-
-  const handleClick = () => {
-    navigate(`/projects/${projectId}`);
-  };
-
   return (
-    <div className={styles.projectCard} onClick={handleClick}>
+    <Link className={styles.projectCard} to={`/projects/${projectId}`} aria-label={`Open ${h3} project details`}>
       <img src={src} alt={`${h3} project thumbnail`} />
       <h3>{h3}</h3>
       <div className={styles.toolsContainer}>
-        {tools.map((tool, index) => (
-          <span key={index} className={styles.tool}>
+        {tools.map((tool) => (
+          <span key={tool} className={styles.tool}>
             {tool}
           </span>
         ))}
       </div>
-    </div>
+    </Link>
   );
 };
 

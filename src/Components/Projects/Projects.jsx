@@ -1,12 +1,19 @@
-// Imports
 import styles from './ProjectsStyles.module.css';
 import ProjectCard from '../../common/ProjectCard';
-import { MLThumb, SWEBlogAppThumb, RocketThumb, ProjectNeptuneImage, JobApplicationLoggerImage, IncidentResponseImage, NovaThumb, PremLeagueThumb } from '../../assets/index';
+import {
+  MLThumb,
+  SWEBlogAppThumb,
+  RocketThumb,
+  ProjectNeptuneImage,
+  JobApplicationLoggerImage,
+  IncidentResponseImage,
+  NovaThumb,
+  PremLeagueThumb,
+} from '../../assets/index';
 
-//projects
 const Projects = () => {
   return (
-    <section id="projects" className={styles.container}>
+    <section id="projects" className={`${styles.container} section-shell`}>
       <h1 className="sectionTitle">Projects</h1>
       <div className={styles.projectsContainer}>
         <ProjectCard
@@ -58,7 +65,7 @@ const Projects = () => {
           tools={['Python', 'scikit-learn', 'Streamlit', 'Plotly', 'SQL', 'Pandas', 'NumPy']}
         />
       </div>
-    </section>    
+    </section>
   );
 };
 

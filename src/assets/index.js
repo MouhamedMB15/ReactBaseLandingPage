@@ -1,15 +1,7 @@
-
-
-
-//IMPORTS
-
-
-//Imports
-import { FaGithub } from "react-icons/fa";
-import { MdNightlight } from "react-icons/md";
-import { IoIosSunny } from "react-icons/io";
-import { FaLinkedin } from "react-icons/fa";
-import { IoMail } from "react-icons/io5";
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { MdNightlight } from 'react-icons/md';
+import { IoIosSunny } from 'react-icons/io';
+import { IoMail } from 'react-icons/io5';
 import HeadShot from './headShotMbengue.png';
 import MLThumb from './mlmodelthumb.webp';
 import SWEBlogAppThumb from './BlogAppThumb.webp';
@@ -20,12 +12,8 @@ import JobApplicationLoggerImage from './JobApplicatoinLogger_image.png';
 import IncidentResponseImage from './incidintreponse_imgag.png';
 import NovaThumb from './novathumb.png';
 import PremLeagueThumb from './pl-role-thumb.png';
-
-
-//Temp Img
 import tempImg from './workinprogress.jpg';
 
-/**EXPORTS**/
 export {
   HeadShot,
   FaGithub,

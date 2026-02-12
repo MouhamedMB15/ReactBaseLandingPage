@@ -1,89 +1,37 @@
-/**CONTAINER**/
 .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    gap: 2rem;
-  }
-  
-  .container .text {
-    width: 80%;
-    max-width: 850px;
-  }
-  
-  .education {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-  }
-  
-  .subheading {
-    padding: 2rem 0;
-  }
-  
-  ul {
-    list-style: none;
-  }
-  
+  display: grid;
+  gap: var(--space-6);
+}
+
+.aboutDetailsContainer {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.detailsContainer {
+  padding: var(--space-5);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+}
+
+.metric {
+  color: var(--text);
+  font-size: 1.45rem;
+  font-weight: 700;
+  margin-bottom: var(--space-2);
+}
+
+.detailsContainer h3 {
+  margin-bottom: var(--space-2);
+}
+
+.text {
+  max-width: 72ch;
+}
+
+@media (min-width: 760px) {
   .aboutDetailsContainer {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    padding: 2rem;
-    justify-content: center;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-  
-  .detailsContainer {
-    padding: 2rem;
-    gap: 1.4rem;
-    flex: 1;
-    background-color: rgb(184, 183, 183);
-    border-radius: 2rem;
-    text-align: center;
-    min-width: 300px;
-    max-width: 100%;
-  }
-  
-  .rtext {
-    font-size: 1.3rem;
-  }
-  
-  
-  @media (max-width: 950px) {
-    .container .text {
-      width: 90%;
-      max-width: 650px;
-    }
-  
-    .rtext {
-      font-size: 1.2rem;
-    }
-  
-    .detailsContainer {
-      padding: 1.5rem;
-    }
-  }
-  
-  @media (max-width: 650px) {
-    .container .text {
-      width: 95%;
-      max-width: 450px;
-    }
-  
-    .aboutDetailsContainer {
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .detailsContainer {
-      width: 90%;
-      max-width: 350px;
-    }
-  
-    .rtext {
-      font-size: 1.4rem;
-    }
-  }
-  
+}

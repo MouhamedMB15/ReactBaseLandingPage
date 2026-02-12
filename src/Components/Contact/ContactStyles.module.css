@@ -1,89 +1,36 @@
-
-/**CONTAINER88**/
 .container {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-  }
-  /**FORM**/
-  form {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-  }
-  /**TEXT AREA**/
-  textarea,
-  input:not([type='submit']) {
-    height: 50px;
-    padding-left: 16px;
-    width: 250px;
-    color: var(--white-bkg-text-color);
-  }
-  
-  textarea {
-    padding-top: 16px;
-    resize: none;
-    height: 250px;
-  }
+  display: grid;
+  gap: var(--space-4);
+}
 
-  /**CONTACT ESSENTIALS**/
-  
-  /**INPUT TEXT COLOR**/ 
-  input,
-  textarea {
-    border-radius: 20px;
-    border: #888 1px solid;
-    box-sizing: border-box;
-    justify-self: center;
-    background-color: #D8D8D8; /**GooD**/
-    color: var(--white-bkg-text-color);
-  }
-  /**PLACE HOLDER**/
-  ::placeholder {
-    color: var(--white-bkg-text-color);
-  }
+.intro {
+  max-width: 58ch;
+}
 
+.form {
+  display: grid;
+  gap: var(--space-4);
+}
 
-  
-  /**INPUT SUB**/
-  input[type='submit'] {
-    background-color: var(--button-color);
-    color: var(--text-button-color);
-    border: none;
-    border-radius: 20px;
-    width: 126px;
-    height: 50px;
-    font-size: 20px;
-    font-weight: bold;
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-    transition: box-shadow 200ms ease-in-out, transform 200ms ease-in-out;
-    margin: auto;
-  }
-  
-  input[type='submit']:hover {
-    transform: scale(1.05);
-  }
-  
-  input[type='submit']:active {
-    transform: translateY(2px);
-    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
-  }
-  
-  /**MEDIA QUEREIES**/
-  @media (width >= 800px) {
-    textarea,
-    input:not([type='submit']) {
-      width: 600px;
-      font-size: 20px;
-    }
-    form {
-      gap: 40px;
-    }
-  }
-  
-  @media (width >= 1400px) {
-    textarea,
-    input:not([type='submit']) {
-      width: 800px;
-    }
-  }
+.formGroup input,
+.formGroup textarea {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  color: var(--text);
+  padding: 0.78rem 0.9rem;
+}
+
+.formGroup textarea {
+  min-height: 170px;
+  resize: vertical;
+}
+
+.formGroup ::placeholder {
+  color: var(--text-muted);
+}
+
+.form button[type='submit'] {
+  justify-self: start;
+}

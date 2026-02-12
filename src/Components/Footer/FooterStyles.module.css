@@ -1,9 +1,11 @@
-
-/**CONTAINER**/
 .container {
-    text-align: center;
-    p {
-      font-size: 16px;
-      color: var(--text-color);
-    }
-  }
+  border-top: 1px solid var(--border);
+  padding: var(--space-6) 0 var(--space-7);
+  margin-top: var(--space-2);
+  text-align: center;
+}
+
+.container p {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}

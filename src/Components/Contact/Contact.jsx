@@ -1,12 +1,11 @@
-//Imports
-import React, { useRef } from 'react';
+import { useRef } from 'react';
 import styles from './ContactStyles.module.css';
 
 function Contact() {
   const formRef = useRef(null);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const handleSubmit = async (event) => {
+    event.preventDefault();
     const form = formRef.current;
 
     try {
@@ -15,8 +14,8 @@ function Contact() {
         method: 'POST',
         body: formData,
         headers: {
-          'Accept': 'application/json'
-        }
+          Accept: 'application/json',
+        },
       });
 
       if (response.ok) {
@@ -32,10 +31,13 @@ function Contact() {
   };
 
   return (
-    <section id="contact" className={styles.container}>
+    <section id="contact" className={`${styles.container} section-shell`}>
       <h1 className="sectionTitle">Contact</h1>
-      <form ref={formRef} onSubmit={handleSubmit}>
-        <div className="formGroup">
+      <p className={styles.intro}>
+        Have an opportunity, idea, or project to discuss? Send a message.
+      </p>
+      <form ref={formRef} onSubmit={handleSubmit} className={styles.form}>
+        <div className={styles.formGroup}>
           <label htmlFor="name" hidden>
             Name
           </label>
@@ -43,12 +45,11 @@ function Contact() {
             type="text"
             name="name"
             id="name"
-            className='test'
             placeholder="Name"
             required
           />
         </div>
-        <div className="formGroup">
+        <div className={styles.formGroup}>
           <label htmlFor="email" hidden>
             Email
           </label>
@@ -60,18 +61,20 @@ function Contact() {
             required
           />
         </div>
-        <div className="formGroup">
+        <div className={styles.formGroup}>
           <label htmlFor="message" hidden>
             Message
           </label>
           <textarea
             name="message"
             id="message"
-            type='text'
             placeholder="Message"
-            required></textarea>
+            required
+          />
         </div>
-        <input className="hover btn" type="submit" value="Submit" />
+        <button className="btn" type="submit">
+          Send Message
+        </button>
       </form>
     </section>
   );

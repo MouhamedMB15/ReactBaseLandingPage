@@ -1,265 +1,61 @@
 .projectCard {
   display: flex;
   flex-direction: column;
-  background-color: rgb(184, 183, 183);
-  border-radius: 2rem;
-  padding: 16px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
+  background: var(--surface);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  border: 1px solid var(--border);
+  transition: border-color 0.18s ease, background-color 0.18s ease;
   text-decoration: none;
-  color: var(--text-color);
-  min-height: 240px;
+  color: var(--text);
+  min-height: 230px;
   width: 100%;
-  position: relative;
-  overflow: hidden;
-  cursor: pointer;
 }
 
 .projectCard:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  border-color: var(--border-strong);
+  background: var(--surface-muted);
 }
 
 .projectCard img {
   width: 100%;
-  height: 140px;
+  height: 152px;
   object-fit: cover;
-  border-radius: 12px;
+  border-radius: 0.65rem;
   margin-bottom: 12px;
-  transition: transform 0.3s ease;
-}
-
-.projectCard:hover img {
-  transform: scale(1.02);
 }
 
 .projectCard h3 {
-  font-size: 1rem;
+  font-size: 0.98rem;
   font-weight: 600;
-  margin: 0 0 12px 0;
+  margin: 0 0 var(--space-3) 0;
   line-height: 1.3;
-  color: var(--text-color);
+  color: var(--text);
   flex-grow: 1;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
-  font-family: 'Roboto', sans-serif;
 }
 
 .toolsContainer {
   display: flex;
   flex-wrap: wrap;
-  gap: 4px;
+  gap: 0.35rem;
   justify-content: flex-start;
-  align-items: flex-start;
   margin-top: auto;
 }
 
 .tool {
-  background: var(--button-color);
-  color: var(--text-button-color);
-  border-radius: 16px;
-  padding: 4px 8px;
-  font-size: 0.65rem;
+  background: transparent;
+  color: var(--text-muted);
+  border-radius: 999px;
+  padding: 0.14rem 0.5rem;
+  font-size: 0.7rem;
   font-weight: 500;
-  white-space: nowrap;
-  transition: all 0.2s ease;
-  border: none;
-  cursor: default;
+  border: 1px solid var(--border);
   -webkit-user-select: none;
   user-select: none;
-  font-family: 'Roboto', sans-serif;
-}
-
-.tool:hover {
-  transform: scale(1.05);
-  background: var(--button-color-hover);
-  box-shadow: 0 2px 8px rgba(52, 119, 185, 0.3);
-}
-
-/* Mobile First - Small Mobile (320px - 480px) */
-@media (min-width: 320px) {
-  .projectCard {
-    min-height: 220px;
-    padding: 14px;
-    border-radius: 1.5rem;
-  }
-  
-  .projectCard img {
-    height: 120px;
-    margin-bottom: 10px;
-  }
-  
-  .projectCard h3 {
-    font-size: 0.9rem;
-    margin-bottom: 10px;
-    -webkit-line-clamp: 2;
-  }
-  
-  .toolsContainer {
-    gap: 3px;
-  }
-  
-  .tool {
-    font-size: 0.6rem;
-    padding: 3px 6px;
-    border-radius: 12px;
-  }
-}
-
-/* Medium Mobile (481px - 767px) */
-@media (min-width: 481px) {
-  .projectCard {
-    min-height: 240px;
-    padding: 16px;
-    border-radius: 1.8rem;
-  }
-  
-  .projectCard img {
-    height: 140px;
-    margin-bottom: 12px;
-  }
-  
-  .projectCard h3 {
-    font-size: 1rem;
-    margin-bottom: 12px;
-    -webkit-line-clamp: 2;
-  }
-  
-  .toolsContainer {
-    gap: 4px;
-  }
-  
-  .tool {
-    font-size: 0.65rem;
-    padding: 4px 8px;
-    border-radius: 16px;
-  }
-}
-
-/* Tablet (768px - 1023px) */
-@media (min-width: 768px) {
-  .projectCard {
-    min-height: 260px;
-    padding: 18px;
-    border-radius: 2rem;
-  }
-  
-  .projectCard img {
-    height: 150px;
-    margin-bottom: 14px;
-  }
-  
-  .projectCard h3 {
-    font-size: 1.05rem;
-    margin-bottom: 14px;
-    -webkit-line-clamp: 3;
-  }
-  
-  .toolsContainer {
-    gap: 5px;
-  }
-  
-  .tool {
-    font-size: 0.7rem;
-    padding: 5px 10px;
-    border-radius: 18px;
-  }
-}
-
-/* Desktop (1024px - 1399px) */
-@media (min-width: 1024px) {
-  .projectCard {
-    min-height: 280px;
-    padding: 20px;
-  }
-  
-  .projectCard img {
-    height: 160px;
-    margin-bottom: 16px;
-  }
-  
-  .projectCard h3 {
-    font-size: 1.1rem;
-    margin-bottom: 16px;
-    -webkit-line-clamp: 3;
-  }
-  
-  .toolsContainer {
-    gap: 6px;
-  }
-  
-  .tool {
-    font-size: 0.75rem;
-    padding: 6px 12px;
-    border-radius: 20px;
-  }
-}
-
-/* Large Desktop (1400px+) */
-@media (min-width: 1400px) {
-  .projectCard {
-    min-height: 300px;
-    padding: 22px;
-  }
-  
-  .projectCard img {
-    height: 170px;
-    margin-bottom: 18px;
-  }
-  
-  .projectCard h3 {
-    font-size: 1.15rem;
-    margin-bottom: 18px;
-    -webkit-line-clamp: 3;
-  }
-  
-  .toolsContainer {
-    gap: 7px;
-  }
-  
-  .tool {
-    font-size: 0.8rem;
-    padding: 7px 14px;
-    border-radius: 22px;
-  }
-}
-
-/* Landscape Mobile */
-@media (max-height: 500px) and (orientation: landscape) {
-  .projectCard {
-    min-height: 200px;
-    padding: 12px;
-  }
-  
-  .projectCard img {
-    height: 100px;
-    margin-bottom: 8px;
-  }
-  
-  .projectCard h3 {
-    font-size: 0.9rem;
-    margin-bottom: 8px;
-    -webkit-line-clamp: 2;
-  }
-  
-  .toolsContainer {
-    gap: 3px;
-  }
-  
-  .tool {
-    font-size: 0.6rem;
-    padding: 3px 6px;
-  }
-}
-
-/* High DPI Displays */
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-  .projectCard {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
 }
   

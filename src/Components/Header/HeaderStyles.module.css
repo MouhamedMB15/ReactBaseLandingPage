@@ -1,114 +1,94 @@
 
-/**CONTAINER**/
 .container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 20px;
-  text-align: center;
-  height: 100dvh;
-  min-height: 500px;
-
-
-  /**HERO**/
-  .hero {
-    max-width: 200px;
-    position: relative;
-  }
-
-  span {
-    display: flex;
-    gap: 25px;
-    justify-content: center;
-
-    a {
-      margin: 0;
-
-      img {
-        width: 30px;
-      }
-    }
-  }
-
-  a {
-    width: fit-content;
-    align-self: center;
-  }
-
-  /**BUTTON**/
-  button {
-    background-color: var(--button-color);
-    color: var(--text-button-color);
-    border: none;
-    border-radius: 20px;
-    width: 126px;
-    height: 50px;
-    font-size: 20px;
-    font-weight: bold;
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-    transition: box-shadow 200ms ease-in-out, transform 200ms ease-in-out;
-    transition: all 0.25s;
-  }
-
-  button:hover {
-    transform: scale(1.05);
-    background-color: var(--button-color-hover);
-  }
-
-  button:active {
-    transform: translateY(2px);
-    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
-  }
+  display: grid;
+  gap: var(--space-6);
+  align-items: center;
+  min-height: calc(100vh - 72px);
+  padding-top: var(--space-7);
 }
 
 .colorModeContainer {
   position: relative;
-  
+  width: fit-content;
+  margin-inline: auto;
+}
+
+.hero {
+  width: min(320px, 72vw);
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
 }
 
 .colorMode {
   position: absolute;
-  transform: translate(50%, -50%);
-}
-
-.colorMode:hover {
+  top: var(--space-4);
+  right: var(--space-4);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.4rem;
+  height: 2.4rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface);
   cursor: pointer;
 }
 
-
-.description {
-  max-width: 24ch;
-  margin: 0 auto;
-}
-
-/**INFO**/
 .info {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: var(--space-4);
+  max-width: 630px;
 }
 
-.icon:hover {
-  transform: scale(1.1);
+.kicker {
+  font-size: 0.8rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-muted);
 }
-@media (width >= 800px) {
+
+.info h2 {
+  font-size: clamp(1rem, 2.2vw, 1.25rem);
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.description {
+  max-width: 58ch;
+}
+
+.socials {
+  display: flex;
+  gap: var(--space-4);
+  align-items: center;
+}
+
+.socials a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.socials a:hover {
+  border-color: var(--border-strong);
+  background: var(--surface-muted);
+}
+
+@media (min-width: 900px) {
   .container {
-    flex-direction: row-reverse;
-    align-items: center;
-    justify-content: space-evenly;
-
-    .hero {
-      max-width: 350px;
-      width: 350px;
-    }
+    grid-template-columns: minmax(280px, 390px) minmax(300px, 1fr);
+    gap: var(--space-7);
   }
-}
 
-@media (width >= 1400px) {
-  .container {
-    .hero {
-      max-width: 400px;
-      width: 400px;
-    }
+  .colorModeContainer {
+    margin-inline: 0;
   }
 }

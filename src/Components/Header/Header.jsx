@@ -1,74 +1,79 @@
-// IMPORTS
-import React from 'react'
 import styles from './HeaderStyles.module.css';
-import { useTheme } from '../../common/ThemeContext.jsx';
-
-import { HeadShot, FaGithub, MdNightlight, IoIosSunny, FaLinkedin, IoMail } from '../../assets/index.js'; 
+import { useTheme } from '../../common/useTheme';
+import {
+  HeadShot,
+  FaGithub,
+  MdNightlight,
+  IoIosSunny,
+  FaLinkedin,
+  IoMail,
+} from '../../assets/index.js';
 
 function Header() {
-    // Theme Switch
-    const { theme, toggleTheme } = useTheme();
+  const { theme, toggleTheme } = useTheme();
+  const iconColor = theme === 'light' ? '#17181a' : '#ececec';
 
-    // Define icon colors based on the theme
-    const iconColor = theme === 'light' ? '#000' : '#fff';
+  return (
+    <section id="hero" className={`${styles.container} section-shell`}>
+      <div className={styles.colorModeContainer}>
+        <img
+          src={HeadShot}
+          className={styles.hero}
+          alt="Profile Headshot Mouhamed Mbengue"
+        />
+        <button
+          type="button"
+          className={styles.colorMode}
+          onClick={toggleTheme}
+          aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
+        >
+          {theme === 'light' ? (
+            <IoIosSunny color={iconColor} size={22} />
+          ) : (
+            <MdNightlight color={iconColor} size={22} />
+          )}
+        </button>
+      </div>
 
-    return (
-        <section id='hero' className={styles.container}>
-            <div className={styles.colorModeContainer}>
-                <img
-                    src={HeadShot}
-                    className={styles.hero}
-                    alt='Profile Headshot Mouhamed Mbengue'
-                />
-                {/** THEME ICON */}
-                {theme === 'light' ? (
-                    <IoIosSunny
-                        className={styles.colorMode}
-                        color={iconColor}
-                        size={43}
-                        onClick={toggleTheme}
-                    />
-                ) : (
-                    <MdNightlight
-                        className={styles.colorMode}
-                        color={iconColor}
-                        size={43}
-                        onClick={toggleTheme}
-                    />
-                )}
-            </div>
-            <div className={styles.info}>
-                <h1>
-                    Mouhamed
-                    <br />
-                    Mbengue
-                </h1>
-                <h2>CS Student</h2>
-                <span>
-                    <a href='https://github.com/mbengue1' target='_blank'>
-                        {/** GitHub ICON */}
-                        <FaGithub className={styles.icon} color={iconColor} size={24} />
-                    </a>
-                    <a href='https://www.linkedin.com/in/mmbengue0/' target='_blank'>
-                        {/** LinkedIn ICON */}
-                        <FaLinkedin className={styles.icon} color={iconColor} size={24} />
-                    </a>
-                    <a href='mailto:mouhamed23mbengue@gmail.com' target='_blank'>
-                        {/** Contact ICON */}
-                        <IoMail className={styles.icon} color={iconColor} size={24} />
-                    </a>
-                </span>
-                <p className={styles.description}>
-                    A motivated and versatile computer science student willing to contribute beyond the classroom, with a strong
-                    foundation in Mathematics, logic, and coding.
-                </p>
-                {/**RESUME BUTTON */}
-                <a href="#contact">
-                    <button className="hover">Resume Available Upon Request</button>
-                </a>
-            </div>
-        </section>
-    )
+      <div className={styles.info}>
+        <p className={styles.kicker}>Aspiring Software Engineer</p>
+        <h1>Mouhamed Mbengue</h1>
+        <h2>Computer Science Student Focused on Backend Development</h2>
+        <span className={styles.socials}>
+          <a
+            href="https://github.com/mbengue1"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub profile"
+          >
+            <FaGithub className={styles.icon} color={iconColor} size={20} />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/mmbengue0/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn profile"
+          >
+            <FaLinkedin className={styles.icon} color={iconColor} size={20} />
+          </a>
+          <a
+            href="mailto:mouhamed23mbengue@gmail.com"
+            aria-label="Email Mouhamed"
+          >
+            <IoMail className={styles.icon} color={iconColor} size={20} />
+          </a>
+        </span>
+        <p className={styles.description}>
+          Motivated professional with a background in computer science, business
+          operations, and customer service. I aim to grow into a backend developer
+          by building secure, scalable systems that improve real user outcomes.
+        </p>
+        <a href="#contact" className="btn">
+          Let&apos;s Connect
+        </a>
+      </div>
+    </section>
+  );
 }
 
 export default Header;

@@ -1,14 +1,12 @@
 
+import PropTypes from 'prop-types';
 
-//Skill List
-function SkillList({src, skill}) {
-  return (
-    <span>
-        <src/>
-        <p>{skill}</p>
-      
-    </span>
-  );
+function SkillList({ skill }) {
+  return <span>{skill}</span>;
 }
+
+SkillList.propTypes = {
+  skill: PropTypes.string.isRequired,
+};
 
 export default SkillList;

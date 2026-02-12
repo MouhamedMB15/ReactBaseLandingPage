@@ -1,20 +1,28 @@
-
-// Imports
 import { useParams } from 'react-router-dom';
-import { MLThumb, SWEBlogAppThumb, BlogSlides, RocketThumb, ProjectNeptuneImage, JobApplicationLoggerImage, IncidentResponseImage, NovaThumb, PremLeagueThumb } from '../../assets'; 
-import styles from './projectdetails.module.css'; 
+import {
+  MLThumb,
+  SWEBlogAppThumb,
+  BlogSlides,
+  RocketThumb,
+  ProjectNeptuneImage,
+  JobApplicationLoggerImage,
+  IncidentResponseImage,
+  NovaThumb,
+  PremLeagueThumb,
+} from '../../assets';
+import styles from './projectdetails.module.css';
 
 const projectsData = {
   "breast-cancer-ml-model": {
     title: "Breast Cancer Tumor Prediction Model",
     description: `
-      This project is a machine learning application designed to predict whether a breast cancer tumor is malignant or benign based on numerous distinct various input features. The model is built using Logistic Regression and is trained on a dataset of breast cancer cases.
+      I built this machine learning application to predict whether a breast cancer tumor is malignant or benign using structured diagnostic features.
 
-      Cases and dataset utilized from the Kaggle Dataset from the Breast Cancer Wisconsin Diagnostics. 
+      I trained the model on the Breast Cancer Wisconsin Diagnostics dataset from Kaggle and evaluated multiple approaches before selecting logistic regression.
 
-      The application consists of a backend server implemented with Flask and a frontend web application built with React JS. Additionally built upon python Jupyter libraries.
+      I implemented a Flask backend and a React frontend, with experimentation and feature analysis completed in Python/Jupyter notebooks.
 
-      The application leverages Logistic Regression with hyperparameter tuning via RandomizedSearchCV to ensure the best model for the user. For scalability, both the model and scaler are saved and loaded using Joblib, facilitating efficient predictions. The frontend is a responsive web application built with React JavaScript, ensuring compatibility across mobile, tablet, and desktop platforms. Additionally, RESTful API is provided to handle prediction requests seamlessly.
+      I tuned hyperparameters with RandomizedSearchCV and persisted both the model and scaler with Joblib for efficient inference. I also exposed prediction endpoints through a REST API and ensured the UI remained responsive across mobile, tablet, and desktop.
     
       `,
     repoLink: "https://github.com/mbengue1/BreastCancerML",
@@ -24,19 +32,19 @@ const projectsData = {
   "swe-blog-app": {
     title: "Full Stack SWE Blog App",
     description: `
-      This project is a full-stack application designed to provide a blogging platform with robust features and a responsive design. The application utilizes Node.js, Express.js, React, and MongoDB, implementing a CRUD (Create, Read, Update, Delete) architecture to manage blog content efficiently. Additionally, built off scratch multiple rest API's.
+      I built this full-stack blogging platform with Node.js, Express, React, and MongoDB using a full CRUD architecture. I also designed and implemented multiple REST APIs from scratch.
 
       Key Features:
-      - **User Authentication**: Users can sign up, create an account, and log in to the application.
-      - **Blog Creation and Management**: Authenticated users can create new blogs, including adding image files for their blog thumbnails. They can edit or delete their own blogs and view all their blogs.
-      - **Responsive Design**: The website features a responsive design with a dark mode option, ensuring a seamless user experience across mobile, tablet, and desktop platforms.
-      - **Category Filtering**: Users can filter blogs by categories when searching for specific content. Users can also select a category when creating a new blog.
-      - **Profile Management**: Users can edit their profiles to update personal information.
-      - **Blog Viewing**: All users, including those not logged in, can view blogs and the profiles of the blog authors. Logged-out users do not have the ability to edit or delete blogs created by others.
+      - User authentication: I implemented sign-up, account creation, and secure login flows.
+      - Blog creation and management: I built create/edit/delete flows for authenticated users, including image thumbnail uploads.
+      - Responsive design: I delivered a responsive UI with dark mode support across mobile, tablet, and desktop.
+      - Category filtering: I added category-based filtering and category selection during blog creation.
+      - Profile management: I implemented profile update capabilities for authenticated users.
+      - Blog viewing controls: I enforced permission boundaries so public users can view content but cannot edit or delete other users' blogs.
 
-      This project showcases the integration of frontend and backend technologies to create a functional and user-friendly web application. The backend, implemented with Node.js and Express.js, handles the application logic and database interactions. The frontend, built with React, provides a modern and interactive user interface.
+      I integrated frontend and backend layers to deliver a reliable user experience, with backend logic and database interactions handled in Express/MongoDB and the client experience implemented in React.
 
-      The database used is MongoDB, ensuring scalability and flexibility in data management. The application also integrates Cloudinary for handling image uploads efficiently.
+      I used MongoDB for flexible data modeling and Cloudinary for scalable image upload and media handling.
     `,
     repoLink: "https://github.com/mbengue1/SWEBlogApplication",
     projectLink: BlogSlides,
@@ -44,15 +52,15 @@ const projectsData = {
   },
   "2d-rocket-game": {
     title: "2D Java Rocket Traveler Game",
-    description: `I developed a 2D Rocket Traveler game using Java, designed to provide an engaging and immersive experience for users. In this game, players can select from multiple rocket ships, each with unique designs and attributes, to start their space journey. The game allows free movement in any direction, offering a sense of exploration and adventure as users navigate through space.
+    description: `I developed this 2D Rocket Traveler game in Java to create an engaging and immersive gameplay experience. I designed multiple rocket ship options with distinct visual styles and enabled full-direction movement for free-form space navigation.
 
-The core gameplay involves shooting and destroying asteroids, which serve as dynamic obstacles. This not only adds a layer of challenge but also keeps the gameplay exciting and fast-paced. As the more asteroids are deleted the more are spawned and duplicated randomly among the users screen. Players must skillfully maneuver their rocket ships to avoid collisions while targeting and eliminating asteroids to score points.
+I built the core loop around shooting and destroying asteroids as dynamic obstacles. I also implemented random spawning behavior so difficulty scales as more asteroids are cleared, keeping gameplay fast-paced and challenging.
 
-To enhance the user experience, the game features smooth controls, ensuring that players can easily navigate their ships and react quickly to the changing environment. The graphical elements are designed to be visually appealing, with vibrant space backgrounds, detailed rocket ships, and realistic asteroid movements.
+I focused on smooth controls so players can react quickly, avoid collisions, and maintain control in intense moments. I paired that with vibrant space visuals, detailed rockets, and animated asteroid movement to improve the overall feel.
 
-Additionally, the game includes various levels of difficulty, catering to both casual gamers and those seeking a more challenging experience. The progressive increase in difficulty ensures that players remain engaged and motivated to improve their skills.
+I included multiple difficulty levels to support both casual players and players who want a steeper challenge curve.
 
-Overall, the 2D Rocket Traveler project showcases the ability to design and develop an interactive and enjoyable gaming experience. It highlights my skills in Java programming, game design, and user interface development, creating a well-rounded and captivating game that appeals to a wide audience.
+I built this project to showcase my skills in Java programming, gameplay systems, and interactive UI design.
     `,
     repoLink: "https://github.com/mbengue1/Java-Rocket-Game",
     projectLink: "https://github.com/mbengue1/Java-Rocket-Game",
@@ -61,15 +69,15 @@ Overall, the 2D Rocket Traveler project showcases the ability to design and deve
   "neptune-sportsbook": {
     title: "Neptune Sportsbook - AI-Enhanced Sports Betting Platform",
     description: `
-      Neptune Sportsbook is a modern, AI-powered sports betting application built with React Native and real-time odds integration. Our platform combines live sports data with intelligent insights to help users make informed betting decisions.
+      I built Neptune Sportsbook as a modern, AI-enhanced sports betting application with React Native and real-time odds integration. My goal was to combine live market data with intelligent insights in a mobile-first experience.
 
-      The application currently operates as an MVP with real-time odds integration and a complete mock betting flow. We've successfully integrated with The Odds API to provide live odds for multiple sports including Soccer, Football, Basketball, Hockey, and Tennis, covering major leagues and tournaments worldwide. The platform features a comprehensive bet selection and management system with an intuitive interface designed for mobile-first experiences.
+      The app currently runs as an MVP with live odds and a full mock betting flow. I integrated The Odds API for Soccer, Football, Basketball, Hockey, and Tennis across major leagues and tournaments, and I built the bet selection/management flow end to end.
 
-      Our tech stack leverages React Native with TypeScript for cross-platform mobile development, supported by Expo for streamlined development and deployment. The backend is built with Node.js and Express, providing a robust REST API for data management. We use MongoDB for user data and session management, while Firebase handles secure authentication and real-time features. The application implements React Context and custom hooks for efficient state management, ensuring smooth performance across all devices.
+      I used React Native + TypeScript with Expo for cross-platform development and faster deployment cycles. On the backend, I built Node.js/Express APIs, used MongoDB for data/session persistence, and integrated Firebase for authentication and real-time capabilities. I also structured state with React Context and custom hooks for maintainable performance.
 
-      The next phase of development focuses on AI enhancement, including an intelligent chat assistant for sports insights and recommendations, machine learning models for bet recommendations and risk assessment, and advanced analytics for statistical analysis. We're also planning to integrate real-time score updates, push notifications, and payment processing capabilities to create a comprehensive sports betting experience.
+      My next phase focuses on AI features including conversational sports insights, recommendation/risk models, and deeper analytics. I also plan to add real-time score updates, push notifications, and payment processing.
 
-      This project demonstrates the integration of modern mobile development technologies with real-time data APIs and AI/ML capabilities, creating a comprehensive sports betting platform that goes beyond traditional sportsbooks. The combination of real-time data, intelligent insights, and a seamless mobile experience positions Neptune Sportsbook as a next-generation platform in the sports betting industry.
+      I built this project to demonstrate my ability to integrate modern mobile engineering, live-data APIs, and AI/ML direction into a cohesive product.
     `,
     repoLink: "https://github.com/mbengue1/project-neptune",
     projectLink: "https://github.com/mbengue1/project-neptune",
@@ -78,17 +86,17 @@ Overall, the 2D Rocket Traveler project showcases the ability to design and deve
   "ai-incident-response": {
     title: "AI-Powered Incident Response System",
     description: `
-      Our AI-Powered Incident Response System is a real-time, AI-assisted incident management platform that triages alerts, notifies engineers, and tracks incidents through a comprehensive microservices architecture. Built with TypeScript, Express.js, WebSockets, and integrated with GPT-3.5, this system provides a modern dashboard UI that empowers engineering and DevOps teams to detect, analyze, and resolve incidents faster than ever before.
+      I built this AI-powered incident response system as a real-time platform that triages alerts, notifies engineers, and tracks incidents across a microservices architecture.
 
-      The platform excels in real-time incident ingestion, seamlessly connecting to popular monitoring tools such as Datadog, Prometheus, AWS CloudWatch, and others through APIs or Webhooks. When incidents occur, our AI-powered triage service immediately springs into action, using advanced language models to summarize alerts, assign appropriate severity levels, and suggest targeted remediation steps. This intelligent automation significantly reduces the time engineers spend on initial incident assessment, allowing them to focus on resolution.
+      I implemented real-time ingestion from monitoring sources (Datadog, Prometheus, CloudWatch, and similar systems) through APIs/webhooks. I then added AI-assisted triage that summarizes alerts, assigns severity, and suggests remediation steps to reduce manual response overhead.
 
-      Communication is handled through WebSocket notifications, ensuring engineers receive live incident updates through dedicated channels with sophisticated escalation policies. The system supports multiple notification methods including Slack, Email, SMS, and PagerDuty-style workflows, ensuring critical alerts reach the right people at the right time. The incident tracking dashboard, built with React and TypeScript, provides real-time updates, comprehensive incident timelines, and AI-generated summaries that give teams complete visibility into ongoing issues.
+      I built live notification workflows with WebSockets and escalation support across channels like Slack, email, SMS, and PagerDuty-style paths. I also developed a React/TypeScript dashboard with timeline tracking and AI summaries so teams can see incident context in real time.
 
-      Security and access control are managed through a robust Role-Based Access Control system, where administrators can manage team assignments and incident ownership while engineers only see incidents relevant to their role and team. The platform also includes automated postmortem generation, creating detailed post-incident reports with AI-summarized root cause analysis that can be exported to PDF or Markdown formats for compliance and auditing purposes.
+      I implemented role-based access control so ownership and visibility align with team responsibilities. I also added automated postmortem generation with AI-summarized root-cause analysis exportable to PDF/Markdown.
 
-      Our tech stack is built for scalability and reliability, featuring Express.js with TypeScript for the backend, WebSocket support for real-time communications, and integration with OpenAI's GPT API with intelligent fallback modes. Data is stored in MongoDB for incident and user management, while Redis handles caching and WebSocket session management. The entire system is containerized with Docker and orchestrated through Kubernetes, with comprehensive CI/CD pipelines through GitHub Actions and deployment on AWS infrastructure including EKS, RDS, S3, and CloudWatch.
+      I designed the stack for reliability and scale: Express + TypeScript backend services, OpenAI integration with fallbacks, MongoDB for incident/user data, Redis for caching/sessions, Docker + Kubernetes for orchestration, and GitHub Actions + AWS (EKS/RDS/S3/CloudWatch) for CI/CD and deployment.
 
-      The current implementation includes the core platform with real-time WebSocket notifications, AI-powered incident triage, and a comprehensive dashboard with incident timeline tracking. Our roadmap includes integrations with popular collaboration tools like Slack, PagerDuty, and Jira, as well as multi-region deployment with failover capabilities for enterprise-grade reliability. This system represents the future of incident management, combining the speed of automation with the intelligence of AI to create a platform that not only responds to incidents but learns from them to prevent future occurrences.
+      I currently have core triage, live notifications, and timeline-driven dashboard tracking implemented. My roadmap includes deeper Slack/PagerDuty/Jira integrations and multi-region failover for enterprise-grade resilience.
     `,
     repoLink: "https://github.com/mbengue1/ai-incident-response-system",
     projectLink: "https://github.com/mbengue1/ai-incident-response-system",
@@ -97,17 +105,17 @@ Overall, the 2D Rocket Traveler project showcases the ability to design and deve
   "job-application-autologger": {
     title: "Job Application Auto-Logger (Google Apps Script)",
     description: `
-      The Job Application Auto-Logger is an intelligent automation tool built with Google Apps Script that eliminates the manual work of tracking job applications by parsing confirmation emails from Gmail and automatically organizing them into a comprehensive Google Sheets tracker. This tool operates entirely within your Google ecosystem, requiring no external APIs or servers, making it both secure and cost-effective.
+      I built the Job Application Auto-Logger in Google Apps Script to remove manual job-tracking work by parsing Gmail confirmations and writing structured entries into Google Sheets.
 
-      The system works by intelligently searching Gmail for application confirmation emails using sophisticated query patterns that capture various ATS system formats. It searches for phrases like "application received," "job application submitted," "we received your application," and many other variations that different companies and systems use. Once found, the script parses each email thread to extract key information including the role title, company name, application term, location, and date applied.
+      I implemented intelligent Gmail query patterns that capture multiple ATS formats (for example: "application received", "job application submitted", "your application was received"). After detection, I parse each thread to extract role, company, term, location, and date-applied metadata.
 
-      One of the most powerful features is its intelligent de-duplication system, which uses Gmail Thread ID as the primary key and role-company combinations as a fallback to prevent duplicate entries. The system doesn't just add new rows; it intelligently updates existing entries when new information becomes available, ensuring your tracker remains current and accurate. This is particularly valuable when you receive follow-up emails or status updates for applications you've already logged.
+      I designed a de-duplication strategy that uses Gmail Thread ID as a primary key with role-company fallback logic. Instead of blindly appending rows, I update existing entries when new status information arrives.
 
-      The tracker maintains a comprehensive structure with 14 key fields including progress tracking, role details, company information, application term, location, recruiter contact status, interview round tracking, thank you email confirmations, offer status, application date, platform used, and the hidden Thread ID for de-duplication. The system automatically applies formatting to status cells and Yes/No fields, making it easy to quickly assess your application status at a glance.
+      I structured the tracker around 14 core fields including pipeline stage, company/role context, recruiter/contact progress, interview rounds, offer status, platform metadata, and hidden IDs for consistency. I also added formatting automation for status and yes/no fields to improve scanability.
 
-      Built entirely in JavaScript using Google Apps Script, the tool integrates seamlessly with Gmail and Google Sheets APIs. It processes email content using advanced regex patterns to handle various ATS systems like Workday, Greenhouse, Lever, and others. The automation can be triggered manually or set to run automatically on a schedule, ensuring your tracker stays current without constant manual intervention.
+      I built the solution entirely in JavaScript with Google Apps Script and integrated Gmail/Sheets APIs directly. I used regex parsing to support common ATS senders (Workday, Greenhouse, Lever, and others), and I enabled both manual and scheduled execution modes.
 
-      The current implementation is fully functional with comprehensive email parsing and de-duplication capabilities. Future enhancements include dashboard analytics to visualize your job search progress, per-ATS parsing modules for more robust extraction, and automatic platform detection based on sender domains. This tool transforms the tedious process of manually tracking job applications into an automated, intelligent system that ensures you never miss an application or duplicate an entry while providing comprehensive insights into your job search progress and success patterns.
+      I currently have a fully functional implementation with production-style parsing and de-duplication behavior. My planned enhancements include dashboard analytics, per-ATS parsing modules, and automatic platform detection from sender domains.
     `,
     repoLink: "https://github.com/mbengue1/job-application-script",
     projectLink: "https://github.com/mbengue1/job-application-script",
@@ -116,15 +124,15 @@ Overall, the 2D Rocket Traveler project showcases the ability to design and deve
   "nova-voice-assistant": {
     title: "N.O.V.A - No Ordinary Voice Assistant",
     description: `
-      N.O.V.A (No Ordinary Voice Assistant) is a personal AI assistant inspired by J.A.R.V.I.S. and F.R.I.D.A.Y. from Iron Man, designed for deep integration, natural conversation, and proactive assistance. Unlike traditional voice assistants, Nova is built for personal productivity and intelligent automation, starting with a MacBook MVP that provides always-listening capabilities with natural language understanding.
+      I built N.O.V.A (No Ordinary Voice Assistant) as a personal AI assistant inspired by J.A.R.V.I.S. and F.R.I.D.A.Y., focused on deep integration, natural conversation, and proactive assistance.
 
-      The core MVP features a sophisticated wake word detection system using "Hey Nova" as the trigger, powered by Picovoice Porcupine for low CPU usage and reliable activation. Once activated, Nova captures speech through advanced audio processing, transcribes it using Whisper (via faster-whisper) for local, efficient speech-to-text conversion, and routes commands intelligently through a modular skill system. The assistant can handle specific tasks like opening applications, checking Notion databases, providing system information, or performing mathematical calculations, all while maintaining natural conversation flow.
+      In the MVP, I implemented wake-word detection ("Hey Nova") with Picovoice Porcupine for low-overhead activation. After activation, I process audio, transcribe with Whisper/faster-whisper, and route commands through a modular skill system for tasks like app control, Notion checks, system queries, and calculations.
 
-      Nova's architecture follows an LLM-first design using OpenAI GPT-4o-mini for intelligent responses, ensuring dynamic and contextual interactions rather than scripted responses. The system includes a sophisticated router that determines whether user input should be handled by specialized skills or passed to the LLM for natural conversation. For speech output, Nova utilizes Azure Neural TTS with premium voices like Libby (British female) while maintaining fallback to macOS built-in TTS for reliability. The assistant supports barge-in capability, allowing users to interrupt responses naturally, and runs as a terminal service with professional error handling and graceful degradation.
+      I designed the architecture as LLM-first with OpenAI GPT-4o-mini for contextual responses instead of scripted intent trees. I built a router to decide between skill execution and conversational LLM output. For voice output, I integrated Azure Neural TTS with macOS fallback support, plus barge-in interruption and graceful error handling.
 
-      The current implementation includes comprehensive skills for app control using AppleScript and JXA automation, system information retrieval, mathematical problem solving with explanations, and Notion integration for agenda management. The modular architecture makes it easy to extend with new capabilities, and the system operates continuously with background processing optimized for ARM64 Macs. Future development phases will expand to include proactive greetings based on context, cross-device operation, memory storage with vector databases, and expansion to Windows and iPhone platforms.
+      I currently support skills for AppleScript/JXA app control, system information retrieval, mathematical reasoning with explanations, and Notion-based agenda workflows. I optimized background execution for ARM64 Mac environments and kept the architecture modular for easy extension.
 
-      This project represents the future of personal AI assistants, combining the reliability of local processing with the intelligence of cloud-based AI to create a truly personal digital butler. Nova grows with the user, learning preferences and automating workflows while maintaining privacy and security. The vision extends beyond simple voice commands to proactive assistance that anticipates needs and provides contextual support across all aspects of digital life, transforming how we interact with our devices and manage our daily tasks.
+      My roadmap includes proactive context-aware behavior, cross-device support, long-term memory via vector storage, and eventual expansion to Windows and iPhone platforms.
     `,
     repoLink: "https://github.com/mbengue1/nova",
     projectLink: "https://github.com/mbengue1/nova",
@@ -134,9 +142,11 @@ Overall, the 2D Rocket Traveler project showcases the ability to design and deve
     title: "Premier League Role Discovery",
     description: `
   
-The Premier League Player Role Discovery project is an unsupervised machine learning and interactive visualization tool designed to reimagine how player positions are understood. Rather than sticking to traditional labels like defender, midfielder, or forward, the system analyzes detailed match data to cluster players into functional, data-driven roles. Using advanced feature engineering, dimensionality reduction, and clustering algorithms such as PCA, UMAP, and K-Means, the model uncovers underlying player archetypes that reflect real performance characteristics on the pitch.
+I built this Premier League Role Discovery project as an unsupervised machine learning and interactive visualization tool to rethink traditional position labels. Instead of fixed defender/midfielder/forward buckets, I clustered players into functional, data-driven roles using detailed match metrics.
 
-The project is deployed as an interactive Streamlit web app, enabling users to search for players, view their assigned roles, and explore comparable players within the same cluster. Intuitive radar charts, heatmaps, and scatter plots make it easy to understand each role’s defining attributes, while built-in explainability tools shed light on which features drive role assignments. By merging data science and sports analytics, this app provides fans, analysts, and clubs with a powerful way to explore player performance and unlock insights hidden in raw match statistics.
+I applied advanced feature engineering, dimensionality reduction, and clustering techniques (including PCA, UMAP, and K-Means) to uncover role archetypes that better reflect on-pitch behavior.
+
+I deployed the project as an interactive Streamlit app where users can search players, inspect assigned roles, and compare similar players within clusters. I added radar charts, heatmaps, scatter plots, and explainability views so users can understand which features drive each role assignment.
 
     `,
     repoLink: "https://github.com/mbengue1/pl-role-discovery",
@@ -154,7 +164,7 @@ const ProjectDetails = () => {
   }
 
   return (
-    <section className={styles.container}>
+    <section className={`${styles.container} section-shell`}>
       <h1 className={styles.title}>{project.title}</h1>
       <div className={styles.content}>
         <img src={project.image} alt={project.title} className={styles.image} />
